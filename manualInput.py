@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Apr 10 16:44:46 2019
+user manual input
 
 @author: 
     Kathryn Saldivar

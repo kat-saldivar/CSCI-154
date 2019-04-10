@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Main Python Code
+friendship and person classes
 
 @authors:
     Kathryn Saldivar 108578476
