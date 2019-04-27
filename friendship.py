@@ -18,7 +18,7 @@ class person:
         self.personality = p
         self.investment = i
         
-    def getPtype(self):
+    def getPersonality(self):
         return self.personality
     def getInvestment(self):
         return self.investment
@@ -33,9 +33,11 @@ class friendship:
             d is the distance they live from each other simplifying by using a code number.
                 0 = same city; 1 = same county; 3 = same state; 4 = same country; 5 = same continent; 6 = else
         """
-        self.friend1 = f1
-        self.friend2 = f2
-        self.length = l
+        self.friends = True
+        self.f1 = f1
+        self.f2 = f2
+        self.length_of_friendship = l
+        self.remaining_time = 100-l
         self.distance = d
         self.calculateFV()
         
@@ -47,5 +49,15 @@ class friendship:
         
     def getFV(self):
         return self.friendshipValue
+    
+    def getRemaining(self):
+        return self.remaining_time
+    
+    def getLOF(self):
+        return self.length_of_friendship
+    
+    def oneMoreYear(self):
+        self.length_of_friendship += 1
+        self.remaining_time -= 1
        
 
