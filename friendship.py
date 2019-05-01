@@ -3,10 +3,12 @@
 friendship and person classes
 
 @authors:
-    Kathryn Saldivar 108578476
-    Dulce Meza-Flores 109754287
+    Kathryn Saldivar    108578476
+    Dulce Meza-Flores   109754287
     Elizabeth-Agnes Gaw 109232948
 """
+
+import personality
 
 class person:
     def __init__(self,p,i):
@@ -45,10 +47,27 @@ class friendship:
         """
             Uses all the variables to create a number between 1-100 which determines how likely a friendship will survive hardship
         """
-        self.friendshipValue = 0
+        numVar = 1
+        fv = 0
+        #ADD DISTANCE VALUE
+        fv = fv + self.distanceFV()
+        
+        #TODO divide by total number of variables to get average for FV
+        self.friendshipValue = fv/numVar
+        
         
     def getFV(self):
+        self.calculateFV()
         return self.friendshipValue
+    
+    def distanceFV(self):
+        dv = 100 * 0.6**self.distance
+        return round(dv)
+    
+    def getPFV(self):
+        p1 = self.f1.getPersonality()
+        p2 = self.f2.getPersonality()
+        return personality.getPV(p1,p2)
     
     def getRemaining(self):
         return self.remaining_time

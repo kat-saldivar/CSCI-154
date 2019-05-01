@@ -3,12 +3,13 @@
 user manual input
 
 @author: 
-    Kathryn Saldivar
-    Dulce Meza-Flores
-    Elizabeth-Agnes Gaw
+    Kathryn Saldivar    108578476
+    Dulce Meza-Flores   109754287
+    Elizabeth-Agnes Gaw 109232948
 """
 
 import friendship as f
+import personality
 import random
 
 def simulateFriendship():
@@ -28,8 +29,20 @@ def simulateFriendship():
     #TODO CHECK TIME VALUE
     f2 = f.person(p,t_i)
     
-    l = int(input("Enter the starting length of time of the friendship in years: "))
-    d = int(input("Enter the distance between where the friends live: "))
+    l = int(input("Current length of friendship: "))
+    d = -1
+    while d<0:
+        print("How close do the friends live to each other? Input the number that matches the closest value.")
+        print("Same City: 1")
+        print("Same County: 2")
+        print("Same State: 3")
+        print("Same Country: 4")
+        print("Same Continent: 5")
+        print("Same Planet: 6")
+        d = int(input())-1
+        if d>5 or d<0:
+            print("INVALID NUMBER")
+            d = -1
     #TODO CHECK LENGTH AND DISTANCE VALUES
     
     friendship = f.friendship(f1,f2,l,d)
@@ -38,12 +51,13 @@ def simulateFriendship():
     for i in range(simulation_length):
         hardship = random.randint(0,100)
         #TODO INCORPORATE ACTUAL HARDSHIP VARIANCE
-        if hardship>99:
+        if hardship>90:
             friendship.friends = False
-            msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years." 
+            msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
+            msg = msg + "Ended due to a level " + str(hardship) + " hardship."
             break
         friendship.oneMoreYear()
-    if msg!="":
+    if msg=="":
         msg = "Friendship successfully lasted forever!"
     print(msg)
 
