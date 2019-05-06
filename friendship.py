@@ -45,15 +45,14 @@ class friendship:
         
     def calculateFV(self):
         """
-            Uses all the variables to create a number between 1-100 which determines how likely a friendship will survive hardship
+            Uses all the variables to create a number which determines how likely a friendship will survive hardship
         """
-        numVar = 1
         fv = 0
-        #ADD DISTANCE VALUE
+        #ADD DISTANCE, PERSONALITY, LOF, AND TIME INVESTMENT
         fv = fv + self.distanceFV()
+        fv = fv + self.getPFV
         
-        #TODO divide by total number of variables to get average for FV
-        self.friendshipValue = fv/numVar
+        self.friendshipValue = fv
         
         
     def getFV(self):

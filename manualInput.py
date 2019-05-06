@@ -17,14 +17,21 @@ def simulateFriendship():
         Runs the friendship simulation
     """
     print("Enter the first person's personality and time investment:")
-    p = input("Personality: ")
-    #TODO CHECK PERSONALITY VALUE
+    p=""
+    while p not in personality.personalities:
+        print("Enter the first person's personality and time investment:")
+        p = input("Personality: ")
+        if p not in personality.personalities:
+            print("INVALID PERSONALITY")
     t_i = input("Time Investment: ")
     #TODO CHECK TIME VALUE
     f1 = f.person(p,t_i)
-    print("Enter the second person's personality and time investment:")
-    p = input("Personality: ")
-    #TODO CHECK PERSONALITY VALUE
+    
+    while p not in personality.personalities:
+        print("Enter the second person's personality and time investment:")
+        p = input("Personality: ")
+        if p not in personality.personalities:
+            print("INVALID PERSONALITY")
     t_i = input("Time Investment: ")
     #TODO CHECK TIME VALUE
     f2 = f.person(p,t_i)
