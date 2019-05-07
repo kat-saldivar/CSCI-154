@@ -12,6 +12,8 @@ import friendship as f
 import personality
 import random
 
+MAX_FV = 341
+
 def simulateFriendship():
     """
         Runs the friendship simulation
@@ -34,8 +36,12 @@ def simulateFriendship():
     
     #TIME INVESTMENT IN HOURS
     inv=-1
-    while inv<0:
-        inv = input("Enter their time investment:")
+    while inv<0 or inv>10:
+        inv = input("Enter their time investment in hours (0-10):")
+        if inv<0 or inv>10:
+            print("INVALID TIME INVESTMENT")
+    #CONVERT TO MINUTES
+    inv = inv*60
     
     #LENGTH FROM 0-100, 100 BEING THE LONGEST LASTING FRIENDSHIP
     l = -1
@@ -62,13 +68,11 @@ def simulateFriendship():
     simulation_length = friendship.getRemaining()
     msg = ""
     for i in range(simulation_length):
-        hardship = random.randint(0,100)
-        #TODO INCORPORATE ACTUAL HARDSHIP VARIANCE
+        hardship = random.randint(0,MAX_FV)
         fv = friendship.getFV()
         if hardship>fv:
             friendship.friends = False
             msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
-            msg = msg + "Ended due to a level " + str(hardship) + " hardship."
             break
         friendship.oneMoreYear()
     if msg=="":
@@ -86,6 +90,7 @@ def mainMenu():
     
     
 #MAIN PROGRAM    
+    
 c = "m"
 while c!='q':
     if c=='m':
