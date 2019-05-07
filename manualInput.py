@@ -75,11 +75,11 @@ def simulateFriendship():
         print("FV: "+str(fv))
         if hardship>fv:
             friendship.friends = False
-            msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
+            msg = "Best friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
             break
         friendship.oneMoreYear()
     if msg=="":
-        msg = "Friendship successfully lasted forever!"
+        msg = "Best friendship successfully lasted forever!"
     print(msg)
 
 def mainMenu():
