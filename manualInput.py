@@ -41,11 +41,14 @@ def simulateFriendship():
     inv = inv*60
     
     #LENGTH FROM 0-100, 100 BEING THE LONGEST LASTING FRIENDSHIP
+    """
     l = -1
     while l<0 or l>100:
         l = int(input("Current length of friendship: "))
         if l<0 or l>100:
             print("INVALID PERSONALITY")
+    """
+    l = 0
     
     #DISTANCE VALUE, ENTER VALUE CLOSEST
     d = -1
