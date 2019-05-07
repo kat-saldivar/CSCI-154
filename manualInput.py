@@ -19,26 +19,34 @@ def simulateFriendship():
     print("Enter the first person's personality and time investment:")
     p=""
     while p not in personality.personalities:
-        print("Enter the first person's personality and time investment:")
+        print("Enter the first person's personality:")
         p = input("Personality: ")
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
-    t_i = input("Time Investment: ")
-    #TODO CHECK TIME VALUE
-    f1 = f.person(p,t_i)
+    f1 = f.person(p)
     
     while p not in personality.personalities:
-        print("Enter the second person's personality and time investment:")
+        print("Enter the second person's personality:")
         p = input("Personality: ")
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
-    t_i = input("Time Investment: ")
-    #TODO CHECK TIME VALUE
-    f2 = f.person(p,t_i)
+    f2 = f.person(p)
     
-    l = int(input("Current length of friendship: "))
+    #TIME INVESTMENT
+    inv=-1
+    while inv<0:
+        inv = input("Enter their time investment:")
+    
+    #LENGTH FROM 0-100, 100 BEING THE LONGEST LASTING FRIENDSHIP
+    l = -1
+    while l<0 or l>100:
+        l = int(input("Current length of friendship: "))
+        if l<0 or l>100:
+            print("INVALID PERSONALITY")
+    
+    #DISTANCE VALUE, ENTER VALUE CLOSEST
     d = -1
-    while d<0:
+    while d>6 or d<1:
         print("How close do the friends live to each other? Input the number that matches the closest value.")
         print("Same City: 1")
         print("Same County: 2")
@@ -46,13 +54,11 @@ def simulateFriendship():
         print("Same Country: 4")
         print("Same Continent: 5")
         print("Same Planet: 6")
-        d = int(input())-1
-        if d>5 or d<0:
-            print("INVALID NUMBER")
-            d = -1
-    #TODO CHECK LENGTH AND DISTANCE VALUES
+        d = int(input())
+        if d>6 or d<1:
+            print("INVALID DISTANCE NUMBER")
     
-    friendship = f.friendship(f1,f2,l,d)
+    friendship = f.friendship(f1,f2,inv,l,d)
     simulation_length = friendship.getRemaining()
     msg = ""
     for i in range(simulation_length):

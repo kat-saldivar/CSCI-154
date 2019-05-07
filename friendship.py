@@ -10,23 +10,29 @@ friendship and person classes
 
 import personality
 
+d_dict = {
+        1 : 41,
+        2 : 26,
+        3 : 16,
+        4 : 10,
+        5 : 6,
+        6 : 4
+        }
+
 class person:
-    def __init__(self,p,i):
+    def __init__(self,p):
         """
             person(p,i)
             personality is a number that correlates to a table with the personality information
             investment is the number of hours a week the person is willing to invest in a relationship
         """
         self.personality = p
-        self.investment = i
         
     def getPersonality(self):
         return self.personality
-    def getInvestment(self):
-        return self.investment
     
 class friendship:
-    def __init__(self,f1,f2,l=0,d=0):
+    def __init__(self,f1,f2,i,l=0,d=0):
         """
             friendship(f1,f2,l,d)
             f1 is the first person in a friendship
@@ -38,6 +44,7 @@ class friendship:
         self.friends = True
         self.f1 = f1
         self.f2 = f2
+        self.investment = i
         self.length_of_friendship = l
         self.remaining_time = 100-l
         self.distance = d
@@ -50,7 +57,7 @@ class friendship:
         fv = 0
         #ADD DISTANCE, PERSONALITY, LOF, AND TIME INVESTMENT
         fv = fv + self.distanceFV()
-        fv = fv + self.getPFV
+        fv = fv + self.getPFV()
         
         self.friendshipValue = fv
         
@@ -60,8 +67,8 @@ class friendship:
         return self.friendshipValue
     
     def distanceFV(self):
-        dv = 100 * 0.6**self.distance
-        return round(dv)
+        d = self.distance
+        return d_dict[d]
     
     def getPFV(self):
         p1 = self.f1.getPersonality()
