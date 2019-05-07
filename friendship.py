@@ -9,6 +9,7 @@ friendship and person classes
 """
 
 import personality
+import random
 
 d_dict = {
         1 : 41,
@@ -44,7 +45,7 @@ class friendship:
         self.friends = True
         self.f1 = f1
         self.f2 = f2
-        self.investment = i
+        self.investment = i #IN MINUTES
         self.length_of_friendship = l
         self.remaining_time = 100-l
         self.distance = d
@@ -58,6 +59,7 @@ class friendship:
         #ADD DISTANCE, PERSONALITY, LOF, AND TIME INVESTMENT
         fv = fv + self.distanceFV()
         fv = fv + self.getPFV()
+        fv = fv + self.getTIFV()
         
         self.friendshipValue = fv
         
@@ -74,6 +76,26 @@ class friendship:
         p1 = self.f1.getPersonality()
         p2 = self.f2.getPersonality()
         return personality.getPV(p1,p2)
+    
+    def getTIFV(self):
+        time_value=0
+        time = self.investment
+        
+        activity = random.randint(0,38) #RANDOM FROM 0-38
+        
+        if 0 <= activity <= 3:
+            time_value = .05 * time
+        elif 4 <= activity <= 9:
+            time_value = .15 * time
+        elif 10 <= activity <= 18:
+            time_value = .20 * time
+        elif 19 <= activity <= 30:
+            time_value = .25 * time     
+        elif 30 <= activity <= 38:
+            time_value = .35 * time
+        else:
+            print("INVALID ACTIVITY INPUT")
+        return time_value
     
     def getRemaining(self):
         return self.remaining_time
