@@ -49,8 +49,8 @@ class friendship:
         self.length_of_friendship = l
         self.remaining_time = 100-l
         self.distance = d
-        print("DISTANCE: " + str(self.distanceFV))
-        print("PERSONALITY: " + str(self.getPFV))
+        print("DISTANCE: " + str(self.distanceFV()))
+        print("PERSONALITY: " + str(self.getPFV()))
         self.calculateFV()
         
     def calculateFV(self):
