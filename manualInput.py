@@ -73,7 +73,7 @@ def simulateFriendship():
         print("HARDSHIP: "+str(hardship))
         fv = friendship.getFV()
         print("FV: "+str(fv))
-        if hardship<fv:
+        if hardship>fv:
             friendship.friends = False
             msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
             break
