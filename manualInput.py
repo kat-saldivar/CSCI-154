@@ -70,6 +70,7 @@ def simulateFriendship():
     msg = ""
     for i in range(simulation_length):
         hardship = random.randint(0,MAX_FV)
+        print("HARDSHIP: "+str(hardship))
         fv = friendship.getFV()
         if hardship>fv:
             friendship.friends = False

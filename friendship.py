@@ -51,7 +51,7 @@ class friendship:
         self.distance = d
         print("DISTANCE: " + str(self.distanceFV()))
         print("PERSONALITY: " + str(self.getPFV()))
-        self.calculateFV()
+        #self.calculateFV()
         
     def calculateFV(self):
         """
