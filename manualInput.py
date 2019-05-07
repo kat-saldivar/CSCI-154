@@ -25,6 +25,7 @@ def simulateFriendship():
             print("INVALID PERSONALITY")
     f1 = f.person(p)
     
+    p=""
     while p not in personality.personalities:
         p = input("Enter the first person's personality:").lower()
         if p not in personality.personalities:
