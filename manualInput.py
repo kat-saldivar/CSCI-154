@@ -18,18 +18,18 @@ def simulateFriendship():
     """
         Runs the friendship simulation
     """
-    print("Enter the first person's personality and time investment:")
+    print("Enter the first person's personality:")
     p=""
     while p not in personality.personalities:
         print("Enter the first person's personality:")
-        p = input("Personality: ")
+        p = input("Personality: ").lower()
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
     f1 = f.person(p)
     
     while p not in personality.personalities:
         print("Enter the second person's personality:")
-        p = input("Personality: ")
+        p = input("Personality: ").lower()
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
     f2 = f.person(p)
@@ -37,7 +37,7 @@ def simulateFriendship():
     #TIME INVESTMENT IN HOURS
     inv=-1
     while inv<0 or inv>10:
-        inv = input("Enter their time investment in hours (0-10):")
+        inv = int(input("Enter their time investment in hours per week (0-10):"))
         if inv<0 or inv>10:
             print("INVALID TIME INVESTMENT")
     #CONVERT TO MINUTES
