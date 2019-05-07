@@ -32,7 +32,7 @@ def simulateFriendship():
             print("INVALID PERSONALITY")
     f2 = f.person(p)
     
-    #TIME INVESTMENT
+    #TIME INVESTMENT IN HOURS
     inv=-1
     while inv<0:
         inv = input("Enter their time investment:")
@@ -64,7 +64,8 @@ def simulateFriendship():
     for i in range(simulation_length):
         hardship = random.randint(0,100)
         #TODO INCORPORATE ACTUAL HARDSHIP VARIANCE
-        if hardship>90:
+        fv = friendship.getFV()
+        if hardship>fv:
             friendship.friends = False
             msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
             msg = msg + "Ended due to a level " + str(hardship) + " hardship."
