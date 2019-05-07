@@ -18,18 +18,15 @@ def simulateFriendship():
     """
         Runs the friendship simulation
     """
-    print("Enter the first person's personality:")
     p=""
     while p not in personality.personalities:
-        print("Enter the first person's personality:")
-        p = input("Personality: ").lower()
+        p = input("Enter the first person's personality:").lower()
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
     f1 = f.person(p)
     
     while p not in personality.personalities:
-        print("Enter the second person's personality:")
-        p = input("Personality: ").lower()
+        p = input("Enter the first person's personality:").lower()
         if p not in personality.personalities:
             print("INVALID PERSONALITY")
     f2 = f.person(p)
