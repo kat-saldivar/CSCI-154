@@ -72,7 +72,7 @@ class friendship:
     
     def distanceFV(self):
         d = self.distance
-        return d_dict[d]
+        return d_dict[d]*2
     
     def getPFV(self):
         p1 = self.f1.getPersonality()
@@ -98,8 +98,8 @@ class friendship:
         else:
             print("INVALID ACTIVITY INPUT")
             return 0
-        print("TIME: " + str(time_value))
-        return time_value
+        print("TIME: " + str(time_value/2))
+        return time_value/2
     
     def getRemaining(self):
         return self.remaining_time

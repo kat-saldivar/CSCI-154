@@ -40,6 +40,6 @@ def getPV(p1,p2):
     #IF A FRIENDSHIP VALUE EXISTS IT RETURNS THE VALUE, ELSE IT RETURNS 1
     vals = p_dict[p1]
     if p2 in vals.keys(): #key exists
-        return vals[p2]
+        return 2*vals[p2]
     else:
-        return 1
+        return 2

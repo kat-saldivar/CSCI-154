@@ -12,7 +12,7 @@ import friendship as f
 import personality
 import random
 
-MAX_FV = 341
+MAX_FV = 300
 
 def simulateFriendship():
     """
