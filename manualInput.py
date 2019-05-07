@@ -72,7 +72,8 @@ def simulateFriendship():
         hardship = random.randint(0,MAX_FV)
         print("HARDSHIP: "+str(hardship))
         fv = friendship.getFV()
-        if hardship>fv:
+        print("FV: "+str(fv))
+        if hardship<fv:
             friendship.friends = False
             msg = "Friendship did not survive hardship, lasted " + str(friendship.getLOF()) + " years.\n"
             break
