@@ -2,7 +2,10 @@
 """
 Created on Fri May  3 16:27:42 2019
 
-@author: Dulce
+@author: 
+    Kathryn Saldivar    108578476
+    Dulce Meza-Flores   109754287
+    Elizabeth-Agnes Gaw 109232948
 
 RESULTS: The highest time invest value achievable is 210 and the lowest is 0
 The final_value list generates a list of values, each run is different becuase the 
